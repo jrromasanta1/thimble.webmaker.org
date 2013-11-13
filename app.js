@@ -215,6 +215,7 @@ var sanitizeScript = (function() {
 app.post('/publish',
          middleware.checkForAuth,
          middleware.checkForPublishData,
+         middleware.blacklistedCheck,
          middleware.ensureMetaData,
          middleware.sanitizeMetaData,
          middleware.checkPageOperation(databaseAPI),
